@@ -6,12 +6,13 @@
 int main(int argc, char **argv) {
   double x;
   int n;
-  // Loop does 10 tests for each x-value from 0 to 7, with 0.5 increments
-  for (x = 0; x < 10; x += 0.5) {
+  // Loop does tests x-values ranging from -10 to 10, with 0.5 x-value increments
+  // for each value of x, 10 different precisions are tested and written. 
+  for (x = -10; x < 10; x += 0.5) {
     double ANCI = sin(x);
     printf("\n\nTesting taylor function for sin(%lf)\nANCI C sin function "
            "equivalent: %lf\n", x, ANCI);
-    // The result of the function is added by two, untill the precision hits 20. 
+    // The precision of the function is added by two, untill the precision hits 20. 
     for (n = 2; n <= 20; n += 2) {
       double test = taylor_sine(x, n);
       printf("\n %lf", test);
